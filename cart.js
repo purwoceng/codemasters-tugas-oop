@@ -23,4 +23,3 @@ export class Cart {
     }
   }
   
-//   module.exports = Cart;

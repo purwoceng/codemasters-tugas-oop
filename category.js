@@ -13,4 +13,3 @@ export class Category {
     }
   }
   
-//   module.exports = Category;
