@@ -7,31 +7,42 @@ import  {Order} from './order.js';
 
 // Example Usage
 
-// Create products
-const product1 = new Product(1, 'Chair', 50, 'Comfortable chair for sitting.');
-const product2 = new Product(2, 'Table', 100, 'Sturdy table for various uses.');
+// kelas product
+const product1 = new Product(1, 'Baju Batik Pria', 150000, 'Baju Batik Premium.');
+const product2 = new Product(2, 'Baju Anak ', 40000, 'Baju Anak Bahan Adem.');
+const product3 = new Product(3, 'Rok Wanita ', 30000, 'Rok Wanita Premium.');
+const product4 = new Product(4, 'Sabun Muka Pria dan Wanita ', 30000, 'Sabun Muka Unisex.');
 
-// Create categories
-const category1 = new Category(101, 'Furniture');
-const category2 = new Category(102, 'Home Decor');
+// kelas category
+const category1 = new Category(1, 'Fashion Pria');
+const category2 = new Category(2, 'Fashion Wanita');
+const category3 = new Category(3, 'Perlengkapan Ibu dan Anak');
 
-// Associate products with categories
+// add product to class category
 product1.addToCategory(category1.categoryName);
-product1.addToCategory(category2.categoryName);
 product2.addToCategory(category1.categoryName);
+product2.addToCategory(category3.categoryName);
+product3.addToCategory(category2.categoryName);
+product3.addToCategory(category3.categoryName);
+product4.addToCategory(category1.categoryName);
+product4.addToCategory(category2.categoryName);
 
-// Display product and category info
+// menampilkan info produk ke kategori produk
 product1.displayInfo();
 product2.displayInfo();
+product3.displayInfo();
+product4.displayInfo();
 category1.displayInfo();
 category2.displayInfo();
+category3.displayInfo();
 
-// Create a cart
-const cart = new Cart(201);
+// membuat variabel keranjang
+const cart = new Cart(1);
 
 // Add products to the cart
 cart.addItem(product1, 2);
 cart.addItem(product2, 1);
+cart.addItem(product3, 1);
 
 // View the cart
 cart.viewCart();

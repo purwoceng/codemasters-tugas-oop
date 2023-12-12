@@ -15,9 +15,9 @@ export class Cart {
     }
   
     viewCart() {
-      console.log(`Cart ID: ${this.cartId}`);
+      console.log(`ID Keranjang: ${this.cartId}`);
       this.items.forEach((item) => {
-        console.log(`Product: ${item.product.productName}, Quantity: ${item.quantity}`);
+        console.log(`Product: ${item.product.productName}, Jumlah Pesanan: ${item.quantity}`);
       });
       console.log('------------------------');
     }

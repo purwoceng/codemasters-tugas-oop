@@ -7,9 +7,20 @@ export class Category {
     }
   
     displayInfo() {
-      console.log(`Category ID: ${this.categoryId}`);
-      console.log(`Category Name: ${this.categoryName}`);
+      console.log('Kategori Produk');
+      console.log(`Kategori ID: ${this.categoryId}`);
+      console.log(`Nama Kategori: ${this.categoryName}`);
       console.log('------------------------');
     }
+
+    updateCategory(categoryName) {
+      this.categoryName = categoryName;
+    }
+    products() {
+      console.log(`Nama Produk di Kategori ${this.categoryName}:`);
+      this.products.forEach(product => {
+        console.log(`${product.productName} (${product.productId})`);
+      });
   }
+}
   

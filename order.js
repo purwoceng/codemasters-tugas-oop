@@ -8,7 +8,7 @@ export class Order {
     }
   
     createOrder(cart) {
-      this.items = [...cart.items];
+      this.items = cart.items;
       this.calculateTotalAmount();
     }
   
@@ -21,9 +21,9 @@ export class Order {
     displayOrderDetails() {
       console.log(`Order ID: ${this.orderId}`);
       this.items.forEach((item) => {
-        console.log(`Product: ${item.product.productName}, Quantity: ${item.quantity}`);
+        console.log(`Nama Produk: ${item.product.productName}, Jumlah: ${item.quantity}`);
       });
-      console.log(`Total Amount: $${this.totalAmount}`);
+      console.log(`Total Bayar Rp.  ${this.totalAmount}`);
       console.log('------------------------');
     }
   }

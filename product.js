@@ -10,12 +10,20 @@ export class Product {
     }
   
     displayInfo() {
+      console.log('Daftar Produk Cantika Fashion');
+      console.log('-----------------------');
       console.log(`Product ID: ${this.productId}`);
-      console.log(`Product Name: ${this.productName}`);
-      console.log(`Price: $${this.price}`);
-      console.log(`Description: ${this.description}`);
-      console.log(`Categories: ${this.categories.join(', ')}`);
+      console.log(`Nama Produk: ${this.productName}`);
+      console.log(`Harga Rp. ${this.price}`);
+      console.log(`Deskripsi Produk: ${this.description}`);
+      console.log(`Kategori Produk: ${this.categories.join(', ')}`);
       console.log('------------------------');
+    }
+
+    updateProduct(productName, price, description) {
+      this.productName = productName;
+      this.price = price;
+      this.description = description;
     }
   
     addToCategory(category) {
