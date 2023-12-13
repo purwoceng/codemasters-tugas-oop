@@ -1,6 +1,7 @@
 // product.js
+import Table from 'cli-table';
 
-export class Product {
+export default class Product {
     constructor(productId, productName, price, description) {
       this.productId = productId;
       this.productName = productName;
@@ -10,14 +11,22 @@ export class Product {
     }
   
     displayInfo() {
-      console.log('Daftar Produk Cantika Fashion');
-      console.log('-----------------------');
-      console.log(`Product ID: ${this.productId}`);
-      console.log(`Nama Produk: ${this.productName}`);
-      console.log(`Harga Rp. ${this.price}`);
-      console.log(`Deskripsi Produk: ${this.description}`);
-      console.log(`Kategori Produk: ${this.categories.join(', ')}`);
-      console.log('------------------------');
+      const table = new Table({
+        head: ['ID', 'Nama', 'Harga', 'Deskripsi','Kategori'],
+        colWidths: [5, 20, 15,29,40],
+      });
+  
+      table.push([this.productId, this.productName, `Rp. ${this.price}`, this.description, this.description]);
+      console.log('Nama Produk');
+      console.log(table.toString());
+      // console.log('Daftar Produk Cantika Fashion');
+      // console.log('-----------------------');
+      // console.log(`Product ID: ${this.productId}`);
+      // console.log(`Nama Produk: ${this.productName}`);
+      // console.log(`Harga Rp. ${this.price}`);
+      // console.log(`Deskripsi Produk: ${this.description}`);
+      // console.log(`Kategori Produk: ${this.categories.join(', ')}`);
+      // console.log('------------------------');
     }
 
     updateProduct(productName, price, description) {

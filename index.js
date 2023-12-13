@@ -1,9 +1,9 @@
 // app.js
 
-import  {Product} from './product.js';
-import  {Category} from './category.js';
-import  {Cart} from './cart.js';
-import  {Order} from './order.js';
+import  Product from './product.js';
+import  Category from './category.js';
+import  Cart from './cart.js';
+import Order from './order.js';
 
 // Example Usage
 

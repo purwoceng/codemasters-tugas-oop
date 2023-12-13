@@ -1,6 +1,6 @@
 // order.js
-
-export class Order {
+import Table from 'cli-table';
+export default class Order {
     constructor(orderId) {
       this.orderId = orderId;
       this.items = [];
@@ -19,10 +19,15 @@ export class Order {
     }
   
     displayOrderDetails() {
-      console.log(`Order ID: ${this.orderId}`);
-      this.items.forEach((item) => {
-        console.log(`Nama Produk: ${item.product.productName}, Jumlah: ${item.quantity}`);
+      const table = new Table({
+        head: ['ID', 'Nama Produk', 'Jumlah Produk'],
+        colWidths: [15, 20,20],
       });
+      console.log('Pesanan');
+      this.items.forEach((item) => {
+       table.push([this.orderId,item.product.productName,item.quantity]);
+      });
+      console.log(table.toString());
       console.log(`Total Bayar Rp.  ${this.totalAmount}`);
       console.log('------------------------');
     }
